@@ -26,6 +26,6 @@ a better and lite weight C/C++ library to interact easely with C style char stri
 - implement functions to convert numerical values to characters.\
 - implement function to retrieve information from string (such as a better `strlen()` function, as example).
 
-#### Made in collaboration with: LéololDB.
+#### Made in collaboration with: Léolol DB.
 ###### the library had not been tested yet...
 ###### version 0.0.3 alpha
