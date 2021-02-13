@@ -1,0 +1,132 @@
+// libstr
+// is meant to be included as header file; there is no other headers/libraries needed, all of the code can run with native C/C++
+
+#pragma once
+
+#define uint unsigned int // time saving
+
+bool contains(const char* argt, const char* argn) { // if argn is contain into argt
+    for(uint i{0} ; argt[i] ; i++) {
+        uint j;
+        for(j=0 ; argn[j] ; j++) {
+           if(argt[i+j] != argn[j]) break;
+        }
+        if(argn[j]==0) return true;
+    }
+    return false;
+}
+ 
+bool startswith(const char* argt, const char* argn) { // if argt starts with argn
+    for(uint i{0} ; argn[i] ; i++) {
+        if(argt[i] != argn[i]) return false;
+    }
+    return true;
+}
+ 
+bool endswith(const char* argt, const char* argn) { //if argt ends eith argn
+    uint lenArgt; while(argt[lenArgt]) lenArgt++; 
+    uint lenArgn; while(argn[lenArgn]) lenArgn++;
+    for(lenArgt ; lenArgn ; lenArgt--) {
+        if(argt[lenArgt] != argn[lenArgn]) return false;
+        lenArgn--;
+    }
+    return true;
+}
+
+bool isOnPos(const char* argt, uint pos, const char* argn) { // if argn is on the given position (pos) in argt
+    uint i = 0;
+    for(pos ; argn[i] ; pos++) {
+        if(argt[pos] != argn[i]) return false;
+        i++;
+    }
+    return true;
+}
+
+int firstOccurence(char* Str0, char* Str1, uint Start) {  // return the position of the first occurence of Str1 into Str0 from Start
+	uint s = 0;
+	for(s ; Start > s && Str0[s-Start] ; s++) if(!Str1[s]) return -1;
+	if(s <= Start) return -1; 
+	s -= Start;
+
+	for(uint i{Start} ; Str1[i+s-1] ; i++) {
+    	uint j = 0;
+		for(j ; j < s ; j++) if(Str0[j] != Str1[i+j]) break;
+    	if(j == s) return i;
+	}
+  	return -1; // Not found
+}
+
+char* cOccurence(const char* argt, const char* argn_1, const char* argn_2) { // returns characters between argn_1 and argn_2 into argt
+    uint m_argt; while(argt[m_argt]) m_argt++;
+    uint m_argn_1; while(argn_1[m_argn_1]) m_argn_1++;
+    uint m_argn_2; while(argn_2[m_argn_2]) m_argn_2++;
+    uint pos1 = 0; // position of the start       | security mesure
+    uint pos2 = 0; // position of the end barrier | security mesure
+
+    for(uint i{0} ; argt[i] ; i++) {
+        if(argt[i] == argn_1[0]) for(uint ii{0} ; argn_1[ii] ; ii++) {
+            if(argt[i+ii] != argn_1[ii]) return 0;
+            else if(ii == m_argn_1) pos1 = i;
+			else if(!argn_1[ii] && !pos1) return 0;
+        }
+		if(argt[i] == argn_2[0] && i) for(uint iii{0} ; argn_2 ; iii++) {
+			if(argt[i+iii] != argn_2[iii]) return 0;
+			else if(iii = m_argn_2) pos2 = i;
+			else if(!argn_2[iii] && !pos2) return 0;
+		}
+        else return 0;
+    }
+
+	uint len = pos2 - pos1;
+	char* argf = {0}; //char argf[len] = {0};
+	uint start = pos1 + m_argn_1;
+	for(uint j{0} ; j <= len ; j++) {
+		argf[j] = argt[start+j];
+	}
+    return argf;
+}
+
+bool isBetweenC(const char* argt, const char* argn, const char* args_1, const char* args_2) { // if argn is between args_1 and args_2 in argt
+	uint m_args_1; while(args_1[m_args_1]) m_args_1++;
+	uint m_args_2; while(args_2[m_args_2]) m_args_2++;
+	uint pos1 = 0;
+	uint pos2 = 0;
+
+	for(uint i{0} ; argt[i] ; i++) {
+		if(argt[i] == args_1[0]) for(uint ii{0} ; args_1[ii] ; ii++) {
+			if(argt[i+ii] != args_1[ii]) return false;
+            else if(ii == m_args_1) pos1 = i;
+			else if(!args_1[ii] && !pos1) return false;
+		}
+		if(argt[i] == args_2[0] && i) for(uint iii{0} ; args_2 ; iii++) {
+			if(argt[i+iii] != args_2[iii]) return false;
+			else if(iii = m_args_2) pos2 = i;
+			else if(!args_2[iii] && !pos2) return false;
+		}
+		else return false;
+	}
+
+	uint len = pos2 - pos1;
+	uint start = pos1 + m_args_1;
+	for(uint j{0} ; j <= len ; j++) {
+		if(argt[start+j] != argn[j]) return false;
+	}
+	return true;
+}
+
+char* pOccurence(const char* argt, uint pos1, uint pos2) { // return the characters between pos1 and pos2 into argt
+	uint len = pos2 - pos1;
+	char* argf = {0};
+
+	for(uint i{0} ; argt[i] ; i++) {
+		argf[i] = argt[i+pos1];
+	}
+	return argf;
+}
+
+bool isBetweenP(const char* argt, const char* argn, uint pos1, uint pos2) { // if argn is between pos1 and pos2 in argt
+	for(uint i{0} ; argn[i] ; i++) {
+		if(argt[i+pos1] != argn[i]) return false;
+	}
+	return true;
+}
