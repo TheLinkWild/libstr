@@ -14,10 +14,14 @@ a better and lite weight C/C++ library to interact easely with C style char stri
 `isOnPos`: tells if the third argument in on the given position (second argument (int)) into the first argument.
 > usage: `isOnPos(<main string>, <position>, <sub string>)`
 
-`firstOccurence`: not doumented yet...<br/>
-`cOccurence`: not doumented yet...<br/>
-`isBetweenC`: not doumented yet...<br/>
-`pOccurence`: not doumented yet...<br/>
+`firstOccurence`: not doumented yet...
+
+`cOccurence`: not doumented yet...
+
+`isBetweenC`: not doumented yet...
+
+`pOccurence`: not doumented yet...
+
 `isBetweenP`: not doumented yet...
 
 ## TODO:
