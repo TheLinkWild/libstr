@@ -1,0 +1,20 @@
+// libstr
+// is meant to be included as header file; there is no other headers/libraries needed, all of the code can run with native C/C++
+
+#pragma once
+
+#include "heads/libstr.h"
+// #include "heads/extra.h"
+
+#define int unsigned uint // time saving
+
+#ifndef __cplusplus
+typedef enum BOOL {
+	false,
+	true
+} bool;
+#endif
+
+#ifdef __cplusplus
+#include "string.hpp"
+#endif
