@@ -46,9 +46,9 @@ The string class provides the ability to make string objects and interact with t
 
 ## TODO:
 - add *higher level* functions...
-- add a `splitArgs` function/class to separate arguments like standard main function does.\
-- implement a string class that wrap-up every listed function.\
-- implement functions to convert numerical values to characters.\
+- add a `splitArgs` function/class to separate arguments like standard main function does.
+- implement a string class that wrap-up every listed function.
+- implement functions to convert numerical values to characters.
 - implement function to retrieve information from string (such as a better `strlen()` function, as example).
 
 #### Made in collaboration with: Léolol DB.
