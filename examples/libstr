@@ -6,7 +6,7 @@
 #include "heads/libstr.h"
 // #include "heads/extra.h"
 
-#define int unsigned uint // time saving
+#define  uint unsigned int // time saving
 
 #ifndef __cplusplus
 typedef enum BOOL {
