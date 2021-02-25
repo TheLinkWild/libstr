@@ -1,20 +1,29 @@
-// libstr
+// libstr -- version: 0.2.0-dev
 // is meant to be included as header file; there is no other headers/libraries needed, all of the code can run with native C/C++
 
 #pragma once
 
-#include "heads/libstr.h"
-// #include "heads/extra.h"
-
-#define uint unsigned int // time saving
+typedef unsigned int uint;
 
 #ifndef __cplusplus
-typedef enum BOOL {
+typedef enum bool {
 	false,
 	true
 } bool;
 #endif
 
 #ifdef __cplusplus
-#include "string.hpp"
+	#include "string.hpp"
 #endif
+
+#include "libstr_heads/libstr.h"
+
+
+inline uint StrSize(const char* arg);
+inline char* StrCopy(const char* str);
+
+bool Contains(char* argt, char* argn);
+bool StartsWith(char* argt, char* argn);
+bool EndsWith(char* argt, char* argn);
+bool IsOnPos(char* argt, uint pos, char* argn);
+int FirstOccurence(char* argt, char* argn, uint pos);
