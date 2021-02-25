@@ -2,34 +2,38 @@
 a better and lite weight C/C++ library to interact easely with C style char strings
 
 ## Available:
-`contains`: tells if the first second argument (as C string) is contained into the first one (as C string too).
-> usage: `contains(<main string>, <sub string>)`
+`StrSize`: tells the size of the string.
+> usage: `StrSize(<string>);`
 
-`startswith`: tells the first argument starts with the second one (all arguments in C style strings).
-> usage: `startswith(<main string>, <sub string>)`...
+`StrCopy`: copy the string (do the resize manipulation).
+> usage: `StrCopy(<string>);`
 
-`endswith`: tells the first argument ends with the second one (all arguments in C style strings).
-> usage: `endswith(<main string>, <sub string>)`
+`Contains`: tells if the first second argument (as C string) is contained into the first one (as C string too).
+> usage: `Contains(<main string>, <sub string>);`
 
-`isOnPos`: tells if the third argument in on the given position (second argument (int)) into the first argument.
-> usage: `isOnPos(<main string>, <position>, <sub string>)`
+`StartsWith`: tells the first argument starts with the second one (all arguments in C style strings).
+> usage: `WtartsWith(<main string>, <sub string>);`
 
-`firstOccurence`: not doumented yet...
+`EndsWith`: tells the first argument ends with the second one (all arguments in C style strings).
+> usage: `EndsWith(<main string>, <sub string>)`
 
-`cOccurence`: not doumented yet...
+`IsOnPos`: tells if the third argument in on the given position (second argument (int)) into the first argument.
+> usage: `FsOnPos(<main string>, <position>, <sub string>);`
 
-`isBetweenC`: not doumented yet...
+`FirstOccurence`: returns the first position of the second argument in the first one, starting from the third.
+> usage: `FirstOccurence(<main string>, <sub string>, <start position>);`
 
-`pOccurence`: not doumented yet...
-
-`isBetweenP`: not doumented yet...
+## Installing:
+- Download the `.zip` file or execute
+```git clone https://github.com/TheLinkWild/libstr/tree/version-0.2.0-dev/```
+- `cd` the where you have downloaded the library
+- Execute the `setup.sh` file and you are done! 
 
 ## TODO:
-- add a `splitArgs` function/class to separate arguments like standard main function does.\
-- implement a string class that wrap-up every listed function.\
+- add a `SplitArgs`, `SplitOnChar`, `SplitOnString` function/class to separate arguments like standard main function does.\
 - implement functions to convert numerical values to characters.\
-- implement function to retrieve information from string (such as a better `strlen()` function, as example).
 
 #### Made in collaboration with: Léolol DB.
-###### the library had not been tested yet...
-###### version 0.0.3 alpha
+###### MICROSOFT WINDOWS AIN'T SUPPORTED AT THE MOMENT!
+###### version 0.2.0-dev
+
