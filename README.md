@@ -30,10 +30,10 @@ a better and lite weight C/C++ library to interact easely with C style char stri
 - Execute the `setup.sh` file and you are done! 
 
 ## TODO:
-- add a `SplitArgs`, `SplitOnChar`, `SplitOnString` function/class to separate arguments like standard main function does.\
-- implement functions to convert numerical values to characters.\
+- add a `SplitArgs`, `SplitOnChar`, `SplitOnString` function/class to separate arguments like standard main function does.
+- implement functions to convert numerical values to characters.
 
 #### Made in collaboration with: Léolol DB.
-###### MICROSOFT WINDOWS AIN'T SUPPORTED AT THE MOMENT!
+###### MICROSOFT WINDOWS ISN'T SUPPORTED AT THE MOMENT!
 ###### version 0.2.0-dev
 
